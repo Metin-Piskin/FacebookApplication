@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StatusBar, ScrollView } from 'react-native';
 
-import Header from '../../Component/Header';
+import Header from '../../Component/Headers/HomeHeader';
 import Composer from '../../Component/Composer';
 import AddStorie from '../../Component/AddStorie';
 import Stories from '../../Component/Stories';
@@ -19,7 +19,7 @@ const Home = () => {
                     backgroundColor: '#fff',
                     maxHeight: 200,
                     marginTop: 10,
-                    
+
                 }}
             >
                 <AddStorie />
