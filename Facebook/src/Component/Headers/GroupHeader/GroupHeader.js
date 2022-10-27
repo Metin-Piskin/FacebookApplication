@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         flexDirection: 'row',
         paddingVertical: 5,
+        marginTop:20
     },
     title: {
         flex: 1,

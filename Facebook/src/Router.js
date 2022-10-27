@@ -13,6 +13,7 @@ import Group from './Pages/Group';
 import Notification from './Pages/Notification';
 import More from './Pages/More';
 import Profile from './Pages/Profile';
+import Login from './Pages/Auth/Login';
 
 const BottomTab = () => {
     return (
@@ -33,8 +34,9 @@ const BottomTab = () => {
                             return (
                                 <View
                                     style={{
-                                        borderTopWidth: 1,
+                                        borderTopWidth: 3,
                                         borderColor: "#1877F2",
+                                        marginBottom: 10
                                     }}
                                 >
                                     <Image
@@ -62,8 +64,9 @@ const BottomTab = () => {
                             return (
                                 <View
                                     style={{
-                                        borderTopWidth: 1,
+                                        borderTopWidth: 3,
                                         borderColor: "#1877F2",
+                                        marginBottom: 10
                                     }}
                                 >
                                     <Image
@@ -83,6 +86,44 @@ const BottomTab = () => {
                 }}
             />
             <Tab.Screen
+                name='Profile'
+                component={Profile}
+                options={{
+                    tabBarIcon: ({ color, focused }) => {
+                        if (focused) {
+                            return (
+                                <View
+                                    style={{
+                                        borderTopWidth: 3,
+                                        borderColor: "#1877F2",
+                                        marginBottom: 10
+                                    }}
+                                >
+                                    <Image
+                                        source={require('./Assets/profile.png')}
+                                        style={{
+                                            tintColor: color,
+                                            width: 33,
+                                            height: 33,
+                                        }}
+                                    />
+                                </View>
+                            )
+                        }
+                        return (
+                            <Image
+                                source={require('./Assets/profile.png')}
+                                style={{
+                                    tintColor: color,
+                                    width: 33,
+                                    height: 33,
+                                }}
+                            />
+                        )
+                    }
+                }}
+            />
+            <Tab.Screen
                 name='Group'
                 component={Group}
                 options={{
@@ -91,8 +132,9 @@ const BottomTab = () => {
                             return (
                                 <View
                                     style={{
-                                        borderTopWidth: 1,
+                                        borderTopWidth: 3,
                                         borderColor: "#1877F2",
+                                        marginBottom: 10
                                     }}
                                 >
                                     <Image
@@ -120,8 +162,9 @@ const BottomTab = () => {
                             return (
                                 <View
                                     style={{
-                                        borderTopWidth: 1,
+                                        borderTopWidth: 3,
                                         borderColor: "#1877F2",
+                                        marginBottom: 10
                                     }}
                                 >
                                     <Image
@@ -149,22 +192,92 @@ const BottomTab = () => {
                             return (
                                 <View
                                     style={{
-                                        borderTopWidth: 1,
+                                        borderTopWidth: 3,
                                         borderColor: "#1877F2",
+                                        marginBottom: 10
                                     }}
                                 >
-                                    <Image
-                                        source={require('./Assets/tab-more.png')}
-                                        style={{ tintColor: color }}
-                                    />
+                                    <View
+                                        style={{
+                                            borderWidth: 2,
+                                            borderColor: color,
+                                            borderRadius: 90,
+                                            marginTop: 3
+                                        }}
+                                    >
+                                        <Image
+                                            source={require('./Assets/Avatar.png')}
+                                            style={{
+                                                width: 25,
+                                                height: 25,
+                                                borderRadius: 90,
+
+                                            }}
+                                        />
+                                        <View
+                                            style={{
+                                                position: 'absolute',
+                                                backgroundColor: '#fff',
+                                                borderRadius: 25,
+                                                borderWidth: 2,
+                                                borderColor: color,
+                                                top: 15,
+                                                right: -8
+
+                                            }}
+                                        >
+                                            <Image
+                                                source={require('./Assets/tab-more.png')}
+                                                style={{
+                                                    tintColor: color,
+                                                    width: 15,
+                                                    height: 15,
+                                                }}
+                                            />
+                                        </View>
+                                    </View>
                                 </View>
                             )
                         }
                         return (
-                            <Image
-                                source={require('./Assets/tab-more.png')}
-                                style={{ tintColor: color }}
-                            />
+                            <View
+                                style={{
+                                    borderWidth: 2,
+                                    borderColor: color,
+                                    borderRadius: 90,
+                                }}
+                            >
+                                <Image
+                                    source={require('./Assets/Avatar.png')}
+                                    style={{
+                                        width: 25,
+                                        height: 25,
+                                        borderRadius: 90,
+
+                                    }}
+                                />
+                                <View
+                                    style={{
+                                        position: 'absolute',
+                                        backgroundColor: '#fff',
+                                        borderRadius: 25,
+                                        borderWidth: 2,
+                                        borderColor: color,
+                                        top: 15,
+                                        right: -8
+
+                                    }}
+                                >
+                                    <Image
+                                        source={require('./Assets/tab-more.png')}
+                                        style={{
+                                            tintColor: color,
+                                            width: 15,
+                                            height: 15,
+                                        }}
+                                    />
+                                </View>
+                            </View>
                         )
                     }
                 }}
@@ -182,12 +295,12 @@ const Router = () => {
                 }}
             >
                 <Stact.Screen
-                    name='BottomTab'
-                    component={BottomTab}
+                    name='Login'
+                    component={Login}
                 />
                 <Stact.Screen
-                    name='Profile'
-                    component={Profile}
+                    name='BottomTab'
+                    component={BottomTab}
                 />
             </Stact.Navigator>
         </NavigationContainer>

@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         backgroundColor:'#fff',
-        paddingVertical:5
+        paddingVertical:5,
+        marginTop:20
     },
     logocontainer: {
         flex: 1,

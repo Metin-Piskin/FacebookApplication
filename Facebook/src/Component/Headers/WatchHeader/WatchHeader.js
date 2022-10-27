@@ -69,7 +69,8 @@ export default WatchHeader;
 
 const styles = StyleSheet.create({
     all: {
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        marginTop:20
     },
     headercontainer: {
         flexDirection: 'row',
