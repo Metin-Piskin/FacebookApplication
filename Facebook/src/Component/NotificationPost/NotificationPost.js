@@ -1,18 +1,26 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { PostDots, Like } from '../Svg';
+import { PostDots, Like, Npost } from '../Svg';
 
-const NotificationPost = () => {
+const NotificationPost = ({ like }) => {
     return (
         <View style={styles.container}>
             <Image
                 source={require('../../Assets/Avatar.png')}
                 style={styles.avatar}
             />
-            <View style={styles.likecontainer}>
-                <Like />
-            </View>
+            {
+                like ? (
+                    <View style={styles.likecontainer}>
+                        <Like />
+                    </View>
+                ) : (
+                    <View style={styles.likecontainer}>
+                        <Npost />
+                    </View>
+                )
+            }
             <View style={styles.innercontainer}>
                 <Text style={styles.textname}>Name</Text>
                 <Text style={styles.textlorem}>
@@ -23,7 +31,7 @@ const NotificationPost = () => {
             <TouchableOpacity style={styles.dots}>
                 <PostDots />
             </TouchableOpacity>
-        </View>
+        </View >
     )
 }
 

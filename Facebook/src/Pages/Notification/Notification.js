@@ -10,16 +10,16 @@ const Notification = () => {
     <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
       <NotificationHeader />
       <Text style={styles.text}>New</Text>
-      <NotificationPost />
+      <NotificationPost like={true} />
       <NotificationPost />
 
       <NotificationKnow />
 
       <Text style={styles.text}>Earlier</Text>
       <NotificationPost />
+      <NotificationPost like={true} />
       <NotificationPost />
-      <NotificationPost />
-      <NotificationPost />
+      <NotificationPost like={true} />
     </ScrollView>
   )
 }
