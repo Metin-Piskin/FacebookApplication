@@ -7,18 +7,18 @@ import { Camera, PostDots, Pen, Plus } from '../Svg';
 const ProfilePP = () => {
     return (
         <View>
-            <LinearGradient
+            <View
                 style={styles.innercontainer}
-
-                colors={[
-                    'rgba(0,0,0,0.60)',
-                    'rgba(0,0,0,0.60)',
-                    'rgba(0,0,0,0.60)',
-                    'rgba(0,0,0,0.60)'
-                ]}
             >
-                <Text style={styles.title}>Add Cover Photo</Text>
-            </LinearGradient>
+                <Image
+                    source={require('../../Assets/Avatar.png')}
+                    style={{
+                        height: 150,
+                    }}
+                />
+
+            </View>
+
 
             <TouchableOpacity style={styles.avatarcontainer}>
                 <Image
